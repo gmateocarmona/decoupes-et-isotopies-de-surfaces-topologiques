@@ -1,0 +1,332 @@
+% !TEX program = xelatex
+\documentclass[12pt,twoside]{report} %openright
+	%\usepackage[utf8]{inputenc}
+ 	\usepackage[greek,english]{babel}
+    \usepackage{yfonts}
+	\usepackage{latexsym}
+	\usepackage{amsmath}
+	\usepackage{amssymb}
+	\usepackage{amsthm}
+	\usepackage{stmaryrd}
+	\usepackage{pb-diagram}
+	\usepackage{amscd}
+	\usepackage{mathrsfs}
+	\usepackage{enumerate}
+	\usepackage{color}
+	\usepackage{cite}
+	%\usepackage{graphicx}
+	\usepackage[all]{xy}
+	
+	 
+	\usepackage{graphicx}
+\graphicspath{ {./images/} }
+	
+	%\usepackage{fixltx2e}
+	\usepackage{extarrows}
+	\usepackage{datetime}
+	\usepackage{mathtools}
+    \usepackage{remreset}
+    \usepackage{afterpage}
+    \usepackage{verbatim}
+
+    \usepackage[svgnames]{xcolor}
+	\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[RGB]{61,82,62},
+    filecolor=[RGB]{61,82,62},
+    urlcolor=[RGB]{61,82,62},
+    citecolor=[RGB]{61,82,62},
+    pdftitle={Jean-Pierre Jouanolou. Catégories Dérivées en Cohomologie l-adique. Faculté des sciences de Paris, 1969. Français.},
+    pdfauthor={Jean-Pierre Jouanolou},
+    pdflang={fr}
+}
+
+\usepackage{bookmark}
+    %\usepackage{csquotes}
+    \usepackage{etoc}
+
+\usepackage{pdflscape}
+	
+	\usepackage{fontspec}
+	\setmainfont{EB Garamond}
+	\usepackage{float}
+	\usepackage[12pt]{moresize}
+	\usepackage{titlesec}
+	\usepackage[twoside,top=1.5in,bottom=1.5in,left=1in,right=1.3in,headheight=16pt,headsep=30pt,footskip=40pt]{geometry}
+
+	\linespread{1.25}
+%	\linespread{1.05}
+
+
+%\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{quiver}[2021/01/11 quiver]
+\RequirePackage{tikz-cd}
+\RequirePackage{amssymb}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing}
+
+
+% A TikZ style for curved arrows of a fixed height, due to AndréC.
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+
+% TikZ arrowhead/tail styles.
+\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
+\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
+\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
+% TikZ arrow styles.
+\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
+
+	% use osf for figures in math mode
+	\DeclareSymbolFont{digits}{\encodingdefault}{\rmdefault}{m}{n}
+	\SetSymbolFont{digits}{normal}{\encodingdefault}{\rmdefault}{m}{n}
+	\DeclareMathSymbol{0}{\mathalpha}{digits}{"30}
+	\DeclareMathSymbol{1}{\mathalpha}{digits}{"31}
+	\DeclareMathSymbol{2}{\mathalpha}{digits}{"32}
+	\DeclareMathSymbol{3}{\mathalpha}{digits}{"33}
+	\DeclareMathSymbol{4}{\mathalpha}{digits}{"34}
+	\DeclareMathSymbol{5}{\mathalpha}{digits}{"35}
+	\DeclareMathSymbol{6}{\mathalpha}{digits}{"36}
+	\DeclareMathSymbol{7}{\mathalpha}{digits}{"37}
+	\DeclareMathSymbol{8}{\mathalpha}{digits}{"38}
+	\DeclareMathSymbol{9}{\mathalpha}{digits}{"39}
+	% helvetica for sans in math
+	\DeclareMathAlphabet{\mathsf}{\encodingdefault}{phv}{m}{n}
+	%\usepackage{showkeys}
+	%\usepackage{showframe}
+	\usepackage{fancyhdr}
+	%\fancyhead[CO]{\rightmark}
+	\fancyhead[CO]{}
+	%\fancyhead[CE]{\leftmark}
+	\fancyhead[CE]{}
+	\fancyhead[RE]{}
+	\fancyhead[LO]{}
+	\fancyhead[RO]{}
+	\fancyhead[LE]{}
+	\cfoot{\thepage}
+	\renewcommand{\headrulewidth}{0.0pt}
+	\titleformat\section{\normalfont\Large\centerline{\hss\rule{1.3in}{.01in}\hss}}{\thesection}{1em}{}
+    \titleformat{\chapter}[display]{}{\huge\filcenter { \thechapter}}{12pt}{\large \filcenter}
+
+%\newcommand\hmmax{0}
+%\newcommand\bmmax{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand*\isommap{%
+  \xlongrightarrow{\raisebox{-0.2 em}{\smash{\ensuremath{\sim}}}}%
+}
+\newcommand{\isomlong}{\isommap}
+
+ \newcommand{\cHom}{\mathrel{\mathscr{H}\mkern-2mu\text{\upshape om}}}
+ \newcommand{\cTor}{\mathrel{\mathscr{T}\mkern-2mu\text{\upshape or}}}
+ \newcommand{\cExt}{\mathrel{\mathscr{E}\mkern-2mu\text{\upshape xt}}}
+
+   \DeclareMathOperator{\D}{D}
+    \DeclareMathOperator{\K}{K}
+    \DeclareMathOperator{\Ld}{\mathrel{L}}
+    \DeclareMathOperator{\Rd}{\mathrel{R}}
+    \DeclareMathOperator{\Hom}{Hom}
+    \DeclareMathOperator*{\bHom}{\mathnormal{\mathbf{Hom}}}
+    \DeclareMathOperator*{\bRd}{\mathrm{\mathbf{R}}} 
+    \DeclareMathOperator*{\bLd}{\mathrm{\mathbf{L}}}
+    \DeclareMathOperator{\bH}{\mathbf{H}}
+    \DeclareMathOperator{\id}{id}
+    \DeclareMathOperator{\Tr}{Tr}
+    \DeclareMathOperator{\fscn}{fscn}
+    \DeclareMathOperator{\fsct}{fsct}
+    \DeclareMathOperator{\fsc}{fsc}
+    \DeclareMathOperator{\rang}{rang}
+    \DeclareMathOperator{\Elc}{Elc}
+    \DeclareMathOperator{\Res}{Res}
+    \DeclareMathOperator{\adt}{adt}
+    \DeclareMathOperator{\adn}{adn}
+    \DeclareMathOperator{\pt}{pt}
+    \DeclareMathOperator{\grs}{grs}
+    \DeclareMathOperator{\modn}{modn}
+    \DeclareMathOperator{\parf}{parf}
+    \DeclareMathOperator{\coh}{coh}
+    \DeclareMathOperator{\tr}{tr}
+    \DeclareMathOperator{\ad}{ad}
+    \DeclareMathOperator{\dimtops}{dimtops}
+    \DeclareMathOperator{\ql}{ql}
+    \DeclareMathOperator{\fl}{fl}
+    \DeclareMathOperator{\pre}{pre}
+    \DeclareMathOperator{\prefsc}{prefsc}
+    \DeclareMathOperator{\TC}{TC}
+    \DeclareMathOperator{\TJ}{TJ}
+    \DeclareMathOperator{\can}{can}
+    \DeclareMathOperator{\Pro}{Pro}
+    \DeclareMathOperator{\Ass}{Ass}
+    \DeclareMathOperator{\Spec}{Spec}
+    \DeclareMathOperator{\Gal}{Gal}
+    \DeclareMathOperator{\Ext}{Ext}
+    \DeclareMathOperator{\Mod}{Mod}
+    \DeclareMathOperator{\Ker}{Ker}
+    \DeclareMathOperator{\Coker}{Coker}
+    \DeclareMathOperator{\gr}{gr}
+    \DeclareMathOperator{\Kt}{Kt}
+    \DeclareMathOperator{\B}{B}
+    \DeclareMathOperator{\Ens}{Ens}
+    \DeclareMathOperator{\Tor}{Tor}
+
+
+	% arrows
+	 \newcommand{\isom}{\simeq}
+	\newcommand{\xto}{\xrightarrow}
+	\renewcommand{\to}{\longrightarrow}
+	\def\rinto{\HorizontalMap\rthooka-\empty-\rhla}
+	\def\linto{\HorizontalMap\lhla-\empty-\lthooka}
+	\def\dinto{\VerticalMap\dthookb|\empty|\dhla}
+	\def\uinto{\VerticalMap\uhla|\empty|\uthookb}
+
+	% categories
+	\def\cC{{\cal C}}
+	\def\cF{{\cal F}}
+	\def\cG{{\cal G}}
+	\def\cH{{\cal H}}
+	\def\cU{{\cal U}}
+
+	% symbols
+	\renewcommand{\emptyset}{\varnothing}
+	\renewcommand{\phi}{\varphi}
+	\newcommand{\und}{\underline}
+
+	% environments
+	\theoremstyle{plain}
+		\newtheorem{lemma}{Lemma}[section]
+		\newtheorem{corollary}[lemma]{Corollary}
+		\newtheorem{proposition}[lemma]{Proposition}
+		\newtheorem{theorem}[lemma]{Theorem}
+		\newtheorem*{theorem*}{Theorem}
+		\newtheorem*{corollary*}{Corollary}
+		\newtheorem{conjecture}{Conjecture}
+	\theoremstyle{definition}
+		\newtheorem{definition}[lemma]{Definition}
+		\newtheorem{example}[lemma]{Example}
+		\newtheorem{remark}[lemma]{Remark}
+		\newtheorem{construction}[lemma]{Construction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newcommand*{\toccontents}{\@starttoc{toc}}
+\makeatother
+
+\makeatletter
+\@addtoreset{footnote}{section}
+\makeatother
+
+%\usepackage{sectsty}
+%\partfont{\LARGE}
+
+\begin{document}
+\setcounter{tocdepth}{2}
+\sloppy
+
+\newgeometry{left=1.5in,right=1.5in, bottom=1.5in}
+
+\thispagestyle{empty}
+%\vspace*{\fill}
+\noindent\makebox[\linewidth]{\rule{4in}{0.01in}}
+\vspace*{\fill}
+\begin{center}
+    {\Huge Catégories Dérivées en} \\
+    \vspace{0.5em}
+    {\Huge Cohomologie $\ell$-adique} \\
+    \vspace{0.5em}
+    {\Large par} \\
+    \vspace{0.5em}
+    {\huge Jean-Pierre Jouanolou}
+\end{center}
+\vspace*{\fill}
+\noindent\makebox[\linewidth]{\rule{4in}{0.01in}}
+%\vspace*{\fill}
+
+\newpage
+
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    {\large N$^\circ$ d'enregistrement au C.N.R.S} \\
+    \vspace{0.5em}
+    {\bf A.0.3374} \\
+    \vspace{4em}
+    {\LARGE\bf THÈSE DE DOCTORAT D'ÉTAT} \\
+    \vspace{0.5em}
+    {\large ès SCIENCES MATHÉMATIQUES} \\
+    \vspace{1em}
+    présentée \\
+    à la \\
+    FACULTÉ DES SCIENCES DE PARIS \\
+    \vspace{2em}
+    par \\
+    \vspace{2em}
+    {\Large M. JOUANOLOU Jean-Pierre} \\
+    \vspace{1em}
+    pour obtenir le grade de Docteur ès-Sciences \\
+\end{center}
+\vspace*{\fill}
+\begin{center}
+    {\bf Sujet de thèse :} {\Large Catégories Dérivées en Cohomologie $\ell$-adique} \\
+    \vspace{1em}
+    Soutenue le 3 Juillet 1969, devant la Commission d'examen \\
+    \vspace{1em}
+    MM. SAMUEL \quad\quad Président \\
+    \vspace{0.5em}
+\begin{tabular}{@{}l@{\hspace{3cm}}r@{}}
+GROTHENDIECK & \\
+VERDIER & Examinateurs \\
+DIXMIER & \\
+\end{tabular}
+\end{center}
+\vspace*{\fill}
+
+\newpage 
+\thispagestyle{empty}
+
+\null\vfill
+\noindent\begin{minipage}{\textwidth}
+This project, involving the transcription of J.-P. Jouanolou's thesis, was conducted with his authorization. It was carried out under the direction of Mateo Carmona, with the collaboration of Niels Borne and other volunteers. The transcription aims to be as faithful as possible to the original. This edition should be regarded as provisional; remarks, comments, and corrections are welcome. More details are available at: \url{https://github.com/gmateocarmona/categories-derivees-en-cohomologie-l-adique}
+\end{minipage}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+%\pagestyle{fancyplain}
+
+\renewcommand{\contentsname}{TABLE DES MATIÈRES}
+\tableofcontents\thispagestyle{empty}
+
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./ch/0.tex}
+\input{./ch/1.tex}
+\input{./ch/2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+%\thispagestyle{empty}
+\mbox{}
+\thispagestyle{empty}
+%\begin{tikzpicture}[remember picture,overlay]
+%    \draw[line width=10pt,color=DarkKhaki]
+%        ([shift={(-0.5\pgflinewidth,-0.5\pgflinewidth)}]current page.north west)
+%        rectangle
+%        ([shift={(0.5\pgflinewidth,0.5\pgflinewidth)}]current page.south east);
+%\end{tikzpicture}
+
+\end{document}
+
+
+%End
