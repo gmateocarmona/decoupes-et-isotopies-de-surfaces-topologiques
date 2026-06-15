@@ -37,11 +37,10 @@
     filecolor=[RGB]{61,82,62},
     urlcolor=[RGB]{61,82,62},
     citecolor=[RGB]{61,82,62},
-    pdftitle={Jean-Pierre Jouanolou. Catégories Dérivées en Cohomologie l-adique. Faculté des sciences de Paris, 1969. Français.},
-    pdfauthor={Jean-Pierre Jouanolou},
+    pdftitle={[Author name]. [Title of the document]. [Brief description]. [Publication status]. [Date]. Transcription by [transcriber(s) and affiliation]. [Version status], [month year].},
+    pdfauthor={[Author name]},
     pdflang={fr}
 }
-
 \usepackage{bookmark}
     %\usepackage{csquotes}
     \usepackage{etoc}
@@ -118,101 +117,18 @@
 %\newcommand\bmmax{0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\newcommand*\isommap{%
-  \xlongrightarrow{\raisebox{-0.2 em}{\smash{\ensuremath{\sim}}}}%
-}
-\newcommand{\isomlong}{\isommap}
-
- \newcommand{\cHom}{\mathrel{\mathscr{H}\mkern-2mu\text{\upshape om}}}
- \newcommand{\cTor}{\mathrel{\mathscr{T}\mkern-2mu\text{\upshape or}}}
- \newcommand{\cExt}{\mathrel{\mathscr{E}\mkern-2mu\text{\upshape xt}}}
-
-   \DeclareMathOperator{\D}{D}
-    \DeclareMathOperator{\K}{K}
-    \DeclareMathOperator{\Ld}{\mathrel{L}}
-    \DeclareMathOperator{\Rd}{\mathrel{R}}
-    \DeclareMathOperator{\Hom}{Hom}
-    \DeclareMathOperator*{\bHom}{\mathnormal{\mathbf{Hom}}}
-    \DeclareMathOperator*{\bRd}{\mathrm{\mathbf{R}}} 
-    \DeclareMathOperator*{\bLd}{\mathrm{\mathbf{L}}}
-    \DeclareMathOperator{\bH}{\mathbf{H}}
-    \DeclareMathOperator{\id}{id}
-    \DeclareMathOperator{\Tr}{Tr}
-    \DeclareMathOperator{\fscn}{fscn}
-    \DeclareMathOperator{\fsct}{fsct}
-    \DeclareMathOperator{\fsc}{fsc}
-    \DeclareMathOperator{\rang}{rang}
-    \DeclareMathOperator{\Elc}{Elc}
-    \DeclareMathOperator{\Res}{Res}
-    \DeclareMathOperator{\adt}{adt}
-    \DeclareMathOperator{\adn}{adn}
-    \DeclareMathOperator{\pt}{pt}
-    \DeclareMathOperator{\grs}{grs}
-    \DeclareMathOperator{\modn}{modn}
-    \DeclareMathOperator{\parf}{parf}
-    \DeclareMathOperator{\coh}{coh}
-    \DeclareMathOperator{\tr}{tr}
-    \DeclareMathOperator{\ad}{ad}
-    \DeclareMathOperator{\dimtops}{dimtops}
-    \DeclareMathOperator{\ql}{ql}
-    \DeclareMathOperator{\fl}{fl}
-    \DeclareMathOperator{\pre}{pre}
-    \DeclareMathOperator{\prefsc}{prefsc}
-    \DeclareMathOperator{\TC}{TC}
-    \DeclareMathOperator{\TJ}{TJ}
-    \DeclareMathOperator{\can}{can}
-    \DeclareMathOperator{\Pro}{Pro}
-    \DeclareMathOperator{\Ass}{Ass}
-    \DeclareMathOperator{\Spec}{Spec}
-    \DeclareMathOperator{\Gal}{Gal}
-    \DeclareMathOperator{\Ext}{Ext}
-    \DeclareMathOperator{\Mod}{Mod}
-    \DeclareMathOperator{\Ker}{Ker}
-    \DeclareMathOperator{\Coker}{Coker}
-    \DeclareMathOperator{\gr}{gr}
-    \DeclareMathOperator{\Kt}{Kt}
-    \DeclareMathOperator{\B}{B}
-    \DeclareMathOperator{\Ens}{Ens}
-    \DeclareMathOperator{\Tor}{Tor}
-
-
-	% arrows
-	 \newcommand{\isom}{\simeq}
-	\newcommand{\xto}{\xrightarrow}
-	\renewcommand{\to}{\longrightarrow}
-	\def\rinto{\HorizontalMap\rthooka-\empty-\rhla}
-	\def\linto{\HorizontalMap\lhla-\empty-\lthooka}
-	\def\dinto{\VerticalMap\dthookb|\empty|\dhla}
-	\def\uinto{\VerticalMap\uhla|\empty|\uthookb}
-
-	% categories
-	\def\cC{{\cal C}}
-	\def\cF{{\cal F}}
-	\def\cG{{\cal G}}
-	\def\cH{{\cal H}}
-	\def\cU{{\cal U}}
-
+ 
 	% symbols
 	\renewcommand{\emptyset}{\varnothing}
 	\renewcommand{\phi}{\varphi}
-	\newcommand{\und}{\underline}
+	\newcommand{\isom}{\simeq}
+	\newcommand*\isommap{\xlongrightarrow{\sim}}
 
-	% environments
-	\theoremstyle{plain}
-		\newtheorem{lemma}{Lemma}[section]
-		\newtheorem{corollary}[lemma]{Corollary}
-		\newtheorem{proposition}[lemma]{Proposition}
-		\newtheorem{theorem}[lemma]{Theorem}
-		\newtheorem*{theorem*}{Theorem}
-		\newtheorem*{corollary*}{Corollary}
-		\newtheorem{conjecture}{Conjecture}
-	\theoremstyle{definition}
-		\newtheorem{definition}[lemma]{Definition}
-		\newtheorem{example}[lemma]{Example}
-		\newtheorem{remark}[lemma]{Remark}
-		\newtheorem{construction}[lemma]{Construction}
+    \DeclareMathOperator{\Kt}{Kt}
+
+	\newcommand*\isomlong{%
+	  \xlongrightarrow{\raisebox{-0.2 em}{\smash{\ensuremath{\sim}}}}%
+	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -238,13 +154,13 @@
 \noindent\makebox[\linewidth]{\rule{4in}{0.01in}}
 \vspace*{\fill}
 \begin{center}
-    {\Huge Catégories Dérivées en} \\
+    {\Huge Découpes et Isotopies} \\
     \vspace{0.5em}
-    {\Huge Cohomologie $\ell$-adique} \\
+    {\Huge de Surfaces Topologiques} \\
     \vspace{0.5em}
     {\Large par} \\
     \vspace{0.5em}
-    {\huge Jean-Pierre Jouanolou}
+    {\huge Yves Ladegaillerie}
 \end{center}
 \vspace*{\fill}
 \noindent\makebox[\linewidth]{\rule{4in}{0.01in}}
@@ -306,8 +222,8 @@ This project, involving the transcription of J.-P. Jouanolou's thesis, was condu
 \renewcommand{\contentsname}{TABLE DES MATIÈRES}
 \tableofcontents\thispagestyle{empty}
 
-\setcounter{page}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{0}
 
 \input{./ch/0.tex}
 \input{./ch/1.tex}
@@ -316,15 +232,8 @@ This project, involving the transcription of J.-P. Jouanolou's thesis, was condu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-%\thispagestyle{empty}
 \mbox{}
 \thispagestyle{empty}
-%\begin{tikzpicture}[remember picture,overlay]
-%    \draw[line width=10pt,color=DarkKhaki]
-%        ([shift={(-0.5\pgflinewidth,-0.5\pgflinewidth)}]current page.north west)
-%        rectangle
-%        ([shift={(0.5\pgflinewidth,0.5\pgflinewidth)}]current page.south east);
-%\end{tikzpicture}
 
 \end{document}
 
