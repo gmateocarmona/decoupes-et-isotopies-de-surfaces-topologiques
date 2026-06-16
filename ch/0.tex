@@ -26,20 +26,46 @@ Du théorème d'isotopie sur les surfaces ``recollées'' cité ci-dessus, on dé
 
 Il est possible de donner une représentation en termes purement algébriques de la catégorie isotopique des surfaces à bord orientées, grâce au théorème~: Si $X$ est une surface à bord orientée connexe (compacte) et si $u_1, u_2, \dots, u_n$ sont des lacets de $\pi_1 X$ ``autour'' des composantes orientées $b_1, b_2, \dots, b_n$ (respectivement) de $\partial X$, alors le groupe de Teichmüller de $X$ est isomorphe au sous-groupe $\mathcal{G}$ du groupe des automorphismes extérieurs de $\pi_1 X$ constitué par les automorphismes qui transforment tout laccet $u_i$ en le conjugué d'un $u_j$ (W.J. Harvey et C. MacLachlan ont, en effet, démontré récemment la surjectivité de l'homomorphisme canonique (induit par le $\pi_1$) qui va du groupe de Teichmüller de $X$ dans $\mathcal{G}$~; son injectivité résulte des théorèmes d'isotopie cités ci-dessus).
 
-%%%
+La catégorie des plongements, introduite plus haut, est le produit 2-fibré de deux catégories (celle des voisinages tubulaires et celle des surfaces à bord orientées) au-dessus d'une troisième (courbes orientées), mais la propriété analogue n'est plus vraie lorsqu'on remplace toutes ces catégories par les catégories isotopiques correspondantes : cela provient essentiellement de ce que le foncteur $\pi_0$ ne commute pas aux produits fibrés de groupes topologiques~; le fait est que lorsqu'on remplace (comme on le fait pour construire les catégories isotopiques) les espaces d'homéomorphismes par leurs $\pi_0$, on néglige les $\pi_1$, or il se trouve que ces $\pi_1$ jouent un rôle important dans la détermination du $\pi_0$ des groupes d'automorphismes de plongements. 
 
+On évite de telles difficultés en remplaçant les espaces de morphismes non plus par leurs $\pi_0$, mais par leurs groupoïdes fondamentaux~: on obtient ainsi, au lieu des catégories ``isotopiques'' (ou 0-isotopiques), des 2-catégories \emph{1-isotopiques} (ainsi on tient compte des $\pi_0$ et des $\pi_1$ des espaces d'isomorphismes)~; contrairement à ce qui se passe pour les catégories isotopiques, cette construction de catégories 1-isotopiques a la propriété de commuter aux produits 2-fibrés de catégories (tout au moins lorsque les $\pi_2$ des espaces intervenant sont triviaux, ce qui est le cas ici). On peut donc donner une représentation algébrique (à 2-équivalence près) de la 2-catégorie 1-isotopique des plongements à partir de la représentation des trois 2-catégories 1-isotopiques suivantes~: celle des voisinages tubulaires, celle des surfaces à bord orientées, et celle des courbes orientées~: c'est l'objet du chapitre VI. C'est ainsi que, par exemple, la 2-catégorie 1-isotopique des surfaces à bord (orientées, compactes) est représentée en associant à chaque surface à bord $X$ les groupoïdes fondamentaux $\pi X$ et $\pi\partial X$ ainsi que le foncteur naturel $\pi\partial X \rightarrow \pi X$~; dans ce cas, le théorème de représentation (cf.VI.6.4) résume sous une forme extrêmement condensée de nombreux résultats de théorie des surfaces dus à R. Baer, J. Nielsen, W. Magnus, D. Epstein, W. Harvey, C. Mac Lachlan, M.E. Hamstrom. 
 
+Dans la bibliographie, on a fait figurer un certain nombe de travaux sur les groupes de tresses, en raison de l'importance que ces derniers jouent dans le calcul des groupes de Teichmüller des surfaces à bord~; toute référence à un travail cité en bibliographie est faite sous forme d'un nombre placé entre crochets. 
 
-
-
+Dans le texte, les références à un énoncé sont faites sous forme d'un chiffre romain désignant le chapitre suivi de nombres désignant le paragraphe~; lorsque la référence concerne un paragraphe du même chapitre, on omet le numéro du dit chapitre.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter*{APPENDICE~: RAPPELS}
 \addcontentsline{toc}{section}{Appendice~: rappels}
 \section*{}
 
-Pour la commodité du lecteur, nous rappelons ci-dessous les principaux
-%
+Pour la commodité du lecteur, nous rappelons ci-dessous les principaux résultats connus sur les groupes d'homotopie des espaces d'homéomorphismes de surfaces orientées connexes.
+\begin{itemize}
+    \item[$1^\circ$)] Les $\pi_0$.
+    \begin{itemize}
+        \item[a)] cas des surfaces sans bord.
 
+        Si $X$ est une sphère (i.e. $X \isom \mathbb{S}^2$), il y a deux classes d'isotopie d'homéomorphismes de $X$~: celle formée par les homéomorphismes conservant l'orientation, et celle formée par les homéomorphismes inversant l'orientation~; le groupe $\pi_0 \Aut X$ des classes d'isotopie d'homéomorphismes de $X$ est donc isomorphe à $\mathbf{Z}/2\mathbf{Z}$.
 
+        Si $X$ est une surface orientable connexe (sans bord) qui n'est pas homéomorphe à $\mathbb{S}^2$, il existe un homomorphisme naturel $\varphi$, de $\pi_0 \Aut X$ dans le groupe des automorphismes extérieurs de $\pi_1 X$ (homomorphisme induit par l'application qui à tout $h \in \Aut X$ associe $\pi_1(h)$). Cet homomorphisme $\varphi$ est un isomorphisme (l'injectivité de $\varphi$ a été démontrée par R. Baer, on en donne une nouvelle démonstration dans le chapitre V~; la surjectivité de $\varphi$ a été démontrée par Dehn, cf. [6], [24]).
+        \item[b)] Cas des surfaces à bord (bord non vide).
+
+        Si $X$ est une surface à bord ($X$ orientable, connexe), alors $\pi_1 X$ admet une présentation par générateurs et relations sous la forme~: 
+        $$
+        \pi_1 X = \{a_1, b_1, \dots, a_g, b_g, u_1, \dots, u_p \;;\; [a_1, b_1] \dots [a_g, b_g] u_1 \dots u_p = 1\}
+        $$ 
+        (où les $u_i$ sont des lacets ``autour des composantes du bord $\partial X$''). Il existe un homomorphisme naturel $\varphi$, du groupe $\pi_0 \Aut^+ X$ des classes d'isotopie d'homéomorphismes de $X$ conservant l'orientation, dans le sous-groupe du groupe des automorphismes extérieurs de $\pi_1 X$ formé des classes d'automorphismes $\theta$ de $\pi_1 X$, tels que pour tout $i = 1, \dots, p$, $\theta(u_i)$ soit conjugué d'un $u_j$~; cet homomorphisme $\varphi$ est un isomorphisme (l'injectivité de $\varphi$ a été démontrée par D.B.A. Epstein (cf. [32]) et est redémontrée au chapitre V par une nouvelle méthode~; la surjectivité de $\varphi$ vient d'être prouvée par W.J. Harvey et C. MacLachlan (cf. [55])).
+    \end{itemize}
+    \item[$2^\circ$)] Les $\pi_i$ ($i \ge 1$).
+    \begin{itemize}
+        \item[a)] Cas des surfaces orientables sans bord.
+
+        Si $X$ est une telle surface (connexe), elle peut être munie d'une structure de courbe algébrique, et l'inclusion du groupe des transformations algébriques de $X$ dans le groupe des homéomorphismes de $X$ est une équivalence (faible) d'homotopie. C'est ainsi que si $X$ est une sphère, alors $\Aut X$ a le type d'homotopie de $\operatorname{SO}(3)$ (et en particulier $\pi_1 \Aut X \isom \mathbf{Z}/2\mathbf{Z}$), si $X$ est un tore ($X \isom S^1 \times S^1$) alors $\Aut X$ a le type d'homotopie du tore $\mathbb{S}^1 \times \mathbb{S}^1$ (en particulier $\pi_1 \Aut X \isom \mathbf{Z}^2$), et si $X$ est de genre $g \ge 2$, alors $\pi_i \Aut X$ est trivial pour $i \ge 1$. (Voir la théorie de Teichmüller [8], [29], [30], [45]).
+        \item[b)] Cas des surfaces à bord orientables (bord non vide).
+
+        Si $X$ est un disque ou un cylindre, $\pi_1 \Aut X$ est isomorphe à $\mathbf{Z}$, et $\pi_i \Aut X = 0$ si $i \ge 2$. Si $X$ n'est ni un disque, ni un cylindre, alors $\pi_i \Aut X$ est trivial pour tout $i \ge 1$ (cf [54], [89]). En utilisant la suite exacte d'homotopie de la fibration $\Aut X \to \Aut \partial X$ on en déduit que pour toute surface à bord $X$ ($X$ connexe, orientable, $\partial X$ non vide), la composante connexe par arcs $\Aut^\circ(X \;;\; \operatorname{id}_{\partial X})$ de l'élément neutre du groupe $\Aut (X \;;\; \operatorname{id}_{\partial X})$ des homéomorphismes de $X$ fixes sur $\partial X$ est (faiblement) contractile (voir aussi la théorie de Teichmüller pour les surfaces à bord~: [29]).
+    \end{itemize}
+\end{itemize}
+
+ 
 % End
