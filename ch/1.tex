@@ -117,14 +117,17 @@ Soit $\Kcp$
 \subsection*{*5. Extensions des catégories $\Kt$ et $\kc$.}
 \addcontentsline{toc}{subsection}{*5. Extensions des catégories $\Kt$ et $\kc$}
 
-{\bf 5.1}. ---
+{\bf 5.1}. --- Au lieu de $\kc$ on peut considérer la catégorie $\tilde{\kc}$ ayant les mêmes objets (i.e. les 1-complexes combinatoires) mais ayant plus de morphismes que $\kc$~: si $k = (S, A, B, \sigma, s)$ et $k' = (S', A', B', \sigma', s')$ sont deux objets de $\tilde{\kc}$, un $\tilde{\kc}$-morphisme de $k$ sur $k'$ est un triplet $\tilde{b} = (\varphi,\psi,(n_{\alpha})_{\alpha\in B/\sigma})$ où $b = (\varphi,\psi)$ est défini comme en {\bf 2.2.}, mais sans la condition ``$\varphi$ et $\psi$ bijectives'', et où $(n_{\alpha})_{\alpha\in B/\sigma}$ est une famille d'entiers strictement positifs. 
 
-
+De même, au lieu de $\Kt$, on peut considérer la catégorie $\tilde{\Kt}$ ayant mêmes objets que $\Kt$ (i.e. les 1-complexes topologiques compacts) mais ayant pour morphismes de $K$ dans $K'$ les classes d'isotopie d'applications continues $h$ de $K$ sur $K'$ telles que~: 
+\begin{itemize}
+    \item[$1^\circ$)] $h^{-1}(S') = S$ (où $S =$ ensemble des sommets de $K$, et $S' =$ ensemble des sommets de $K'$).
+    \item[$2^\circ$)] Pour chaque arête $\alpha$ de $K$, $h/\alpha$ est \emph{étale}, et donc induit (si $\alpha$ n'est pas une boucle isolée) un homéomorphisme de $\alpha$ sur une arête $\alpha'$ de $K'$, ou bien (si $\alpha$ est une boucle isolée) un revêtement à $n$ feuillets $\alpha \to \alpha'$ d'une arête $\alpha'$ de $K'$.
+\end{itemize}
+Les catégories $\tilde{\Kt}$ et $\tilde{\kc}$ ne sont plus des groupoïdes, certains de leurs morphismes n'étant pas des isomorphismes. Les foncteurs $c$ et $r$ (définis en {\bf 3.}) peuvent s'étendre en des foncteurs $\tilde{c}$ et $\tilde{r}$ quasi inverses l'un de l'autre~: $\tilde{c} : \tilde{\Kt} \to \tilde{\kc}$, $\tilde{r} : \tilde{kc} \to \tilde{Kt}$ (Dans cette équivalence si $K,K'$ sont deux objets de $\tilde{\Kt}$, $\tilde{h} : K \to K'$ un $\tilde{\Kt}$- morphisme et $\tilde{b} = (\varphi,\psi,(n_{\alpha})_{\alpha\in B/\sigma} )$ l'image $\tilde{c}(\tilde{h})$, alors le \emph{degré} $n_{\alpha} \in (n_{\alpha})_{\alpha\in B/\sigma}$ correspondra au nombre de feuillets de revêtement $h|\alpha : \alpha \to h(\alpha)$). 
 
 \vskip .3cm
-{\bf 5.2}. ---
-
-
+{\bf 5.2}. --- On vérifierait immédiatement que le foncteur groupoïde fondamental $\pi$ d'un 1-complexe combinatoire (défini en {\bf 2.4.}) de $\kcp$ dans $\GR$ s'étend en un foncteur de $\tilde{\kcp}$ dans $\tilde{\GR}$ (où $\tilde{\kcp}$ est la sous catégorie pleine de $\tilde{\kc}$ formée par les 1-complexes purs, et $\tilde{\GR}$ est la catégorie des groupoïdes et foncteurs quelconques entre groupoïdes).
 
 \vskip .3cm
 {\bf 5.3}. --- Enfin, on pourrait, dans $\tilde{\kcp}$, introduire la notion de 1-complexe combinatoire $k'$ \emph{revêtement} d'un autre 1-complexe combinatoire $k$, ou de \emph{morphisme étale} de 1-complexes combinatoires, alors $\pi(k)$ apparaîtrait comme le classifiant des revêtements combinatoires de $k$. Nous ne développons pas cet aspect dont nous n'avons pas besoin dans la suite.
