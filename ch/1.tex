@@ -6,34 +6,80 @@
 \addcontentsline{toc}{section}{I. Catégorie de 1-complexes}
 \section*{}
 
-Dans ce chapitre on fixe la terminologie utilisée
-%
+Dans ce chapitre on fixe la terminologie utilisée pour les 1-complexes et on établit un certain nombre de propriétés les concernant. Dans les paragraphes précédés d'une astérisque on effectue des constructions qu'on n'utilisera qu'au chapitre VI, et qu'on conseille au lecteur de sauter en première lecture.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{1. Catégorie isotopique $\Kt$ des 1-complexes topologiques compacts.}
 \addcontentsline{toc}{subsection}{1. Catégorie isotopique $\Kt$ des 1-complexes topologiques compacts}
 
-{\bf 1.1}. --- On appellera \emph{étoile standard} à $n$ branches
-%
+{\bf 1.1}. --- 1.1. On appellera \emph{étoile standard} à $n$ branches (où $n$ est un entier strictement positif) la partie $\St_n$ de $\mathbf{R}^2$ définie en coordonnées polaires par~: 
+$$
+\St_n = \{(\rho, \theta),\; 0 \le \rho < 1, \quad \theta = \frac{2k\pi}{n},\; k \in \mathbf{Z}\}
+$$ 
+On conviendra d'appeler étoile à zéro branches la partie de $\mathbf{R}^2$ réduite à l'origine. 
 
-
-
-\vskip .3cm
-{\bf 1.2}. --- 
-
-
+Plus généralement on appellera \emph{étoile} tout espace topologique homéomorphe à une étoile standard. Le nombre de branches d'une étoile est un invariant topologique (on vérifie en effet immédiatement que si $n \neq m$, alors $\St_n$ et $\St_m$ ne sont pas homéomorphes~: l'espace obtenu à partir de $\St_n$ (resp. $\St_m$) en supprimant l'origine comportant $n$ (resp. $m$) composantes connexes). 
 
 \vskip .3cm
-{\bf 1.3}. --- 
+{\bf 1.2}. --- Un \emph{1-complexe topologique compact} $K$ est un couple $(E,S)$, où $E$ est un espace topologique compact dont tout point possède un voisinage qui est une étoile~; si cette étoile possède $n$ branches, $n$ sera appelé le \emph{degré} du point considéré~; si ce degré est différent de 2, ce point sera appelé \emph{sommet topologique} de $K$. Quant à $S$ c'est une partie finie de $E$ contenant l'ensemble (fini, vu l'hypothèse de compacité) des sommets topologiques de $K$. Les points de $S$ seront appelés les \emph{sommets} de $K$. 
 
+Il résulte des définitions que tout sommet qui n'est pas sommet topologique possède un voisinage homéomorphe au segment $]0,1[$ de $\mathbf{R}$. Un point de degré zéro sera dit \emph{sommet isolé}. 
+
+Nous appellerons \emph{arête} de $K$ toute composante connexe de $E \setminus S$~; par compacité il n'y a qu'un nombre fini d'arêtes dans $K$. Si une arête est homéomorphe à la sphère $S^1$ de dimension 1 (espace topologique des nombres complexes de module 1) on l'appellerera \emph{boucle isolée}~; si cela n'est pas le cas alors l'arête considérée est homéomorphe à $]0,1[$ (en effet toute arête est une variété paracompacte connexe de dimension 1). 
+
+Nous appellerons \emph{arcs} de $K$ les variétés topologiques orientées à bord (éventuellement vide), définies de la manière suivante~: 
+\begin{itemize}
+    \item[1$^\circ$)] à toute arête boucle isolée sont associés deux arcs ayant le même espace sous jacent (à savoir~: la boucle), et chacun d'eux ayant l'une des deux orientations possibles de cette boucle. De tels arcs seront dits \emph{arcs sans source}, ou \emph{arcs boucle isolée} par opposition à ceux qu'on va définir maintenant~:
+    \item[2$^\circ$)] pour toute arête $\alpha$ qui n'est pas boucle isolée, on construit deux arcs distincts en considérant le compactifié $\tilde{\alpha}$ de $\alpha$ par deux points extrémités et en munissant respectivement cette variété à bord des deux orientations possibles.
+\end{itemize}
+Pour un arc de ce type on distingue sa \emph{source} $\tilde{s}(a)$ et son \emph{but} $\tilde{b}(a)$ qui sont les deux points images réciproques de $0$ et de $1$ (respectivement), dans tout homéomorphisme orienté de $a$ avec $[0,1]$ muni de l'orientation standard. 
+
+À \emph{tout} arc $a$ est associé l'arc \emph{inverse} $\sigma(a)$ qui a même espace sous-jacent que $a$, mais l'orientation inverse. Il existe un homéomorphisme canonique $\tau_a$, non orienté, entre $a$ et $\sigma(a)$, (induit par l'identité de l'espace sous-jacent), mais ne pas oublier que $a$ et $\sigma(a)$ sont deux espaces différents~: c'est ainsi que $\tilde{s}(a)$ et $\tilde{b}(\sigma(a))$ sont deux points distincts~: l'un est dans $a$, l'autre dans $\sigma(a)$, aucun n'est un point de $K$. 
+
+L'injection canonique d'une arête $\alpha$ qui n'est pas boucle isolée se prolonge canoniquement en une application $p_a$ continue de tout arc $a$ correspondant à $\alpha$ dans $K$~; on notera~: $s(a)$ (resp~: $b(a)$) l'image de $\tilde{s}(a)$ (resp.~: de $\tilde{b}(a)$). Les points $s(a)$ et $b(a)$ sont deux points de $K$, on a~: $s(a) = b(\sigma(a))$ et $b(a) = s(\sigma(a))$. $s(a)$ sera appelé \emph{source dans $K$}, $b(a)$~: \emph{but dans $K$} de $a$ (il peut arriver que $s(a)$ soit égal à $b(a)$). 
+
+N.B. Il nous arrivera souvent, pour simplifier les notations, de confondre $K$ avec l'espace sous-jacent.
 
 \vskip .3cm
-{\bf 1.4}. --- 
+{\bf 1.3}. --- Étant donné deux 1-complexes $K, K'$ ($K = (E, S)$, $K' = (E', S')$), nous appellerons isomorphisme de 1-complexes tout homéomorphisme $h$ de $E$ dans $E'$ tel que $h(S) = S'$. L'espace de ces isomorphismes sera noté $\operatorname{Isom}(K, K')$ (ou $\Aut K$ si $K = K'$), il sera toujours muni de la topologie ``compacts-ouverts'' qui coïncide ici avec la topologie de la convergence uniforme lorsqu'on munit $K'$ d'une distance définissant sa topologie.
 
+La \emph{catégorie $\KT$ des 1-complexes topologiques} (compacts) est (par définition) la catégorie ayant pour objets les 1-complexes topologiques compacts, et pour morphismes les isomorphismes de 1-complexes.
 
-
+La \emph{catégorie isotopique des 1-complexes} (topologiques compacts) est (par définition) la catégorie $\Kt$ ayant les mêmes objets que $\KT$, et pour flèches entre deux objets $K$ et $K'$ les éléments de~:
+$$
+\Hom_{\Kt}(K, K') = \pi_0 \operatorname{Isom}(K, K').
+$$
 \vskip .3cm
-{\bf 1.5}. --- 
+{\bf 1.4}. --- Étant donné un 1-complexe $K$, notons $A$ l'ensemble de ses arcs, $S$ l'ensemble de ses sommets~; $A$ est muni d'une involution sans point fixe $\sigma$, qui à tout arc $a$ associe son inverse $\sigma(a)$. On dispose aussi d'une application \emph{source} $s$ de $A \setminus B$ (où $B$ est l'ensemble des arcs boucle isolées), dans $S$ qui, à tout arc $a$ de $A \setminus B$, associe sa source $s(a)$ dans $K$.
+
+Soit $K'$ un second 1-complexe, $A'$ l'ensemble de ses arcs et $S'$ l'ensemble de ses sommets~; alors~: tout isomorphisme $h$ de $K$ sur $K'$ induit une bijection $A(h)$ entre $A$ et $A'$ et une bijection $S(h)$ entre $S$ et $S'$ (Vérification immédiate). De plus si $h'$ est un second isomorphisme de $K'$ sur un troisième 1-complexe $K''$ on a~:
+$$
+S(h' \circ h) = S(h') \circ S(h), \quad A(h' \circ h) = A(h') \circ A(h).
+$$
+\vskip .3cm
+{
+Proposition {\bf 1.5}. --- \it Soit $K$ un 1-complexe, $A$ l'ensemble de ses arcs, $S$ l'ensemble de ses sommets. Soit $h$ un automorphisme de $K$ ($h \in \Aut K$). Alors, $h$ isotope à l'identité dans $\Aut K$ si et seulement si $A(h)$ est l'identité de $A$ et $S(h)$ est l'identité de $S$. (On dit que deux éléments $g$ et $h$ de $\Aut K$ sont isotopes si et seulement s'il existe une application continue $\gamma : [0, 1] \to \Aut K$ telle que $\gamma(0) = g$ et $\gamma(1) = h$~: cela signifie que $g$ et $h$ sont dans la même composante connexe par arcs de $\Aut K$).
+}
+\vskip .3cm
+Pour démontrer cette proposition nous aurons besoin des lemmes suivants (ici et partout dans la suite on entend par homéomorphisme \emph{orienté} un homéomorphisme conservant l'orientation)~:
+\vskip .3cm
+{
+Lemme {\bf 1.5.1}. --- \it
+\begin{itemize}
+    \item[a)] Tout homéomorphisme orienté de $]0, 1[$ ou de $\mathbb{S}^1$ est isotope à l'identité.
+    \item[b)] Tout homéomorphisme orienté de $I = [0, 1]$ est isotope à l'identité par isotopie fixe sur $\{0, 1\}$.
+    \item[c)] Tout homéomorphisme orienté de $S^1$ fixe sur $1$ est isotope à l'identité par isotopie fixe sur $1$.
+\end{itemize}
+}
+\vskip .3cm
+Il résultera du lemme ci-dessus que la composante de l'identité dans $\Aut (]0, 1[)$ (resp. $\Aut \mathbb{S}^1$, $\Aut I$, $\Aut (\mathbb{S}^1 ; 1)$) est formée des homéomorphismes orientés de $]0, 1[$ (resp. de $\mathbb{S}^1$, de $I$, de $(\mathbb{S}^1 ; 1)$).
+
+En fait on va montrer les deux lemmes~:
+
+
+
+
+
 
 
 
