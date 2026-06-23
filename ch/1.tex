@@ -75,22 +75,96 @@ Lemme {\bf 1.5.1}. --- \it
 Il résultera du lemme ci-dessus que la composante de l'identité dans $\Aut (]0, 1[)$ (resp. $\Aut \mathbb{S}^1$, $\Aut I$, $\Aut (\mathbb{S}^1 ; 1)$) est formée des homéomorphismes orientés de $]0, 1[$ (resp. de $\mathbb{S}^1$, de $I$, de $(\mathbb{S}^1 ; 1)$).
 
 En fait on va montrer les deux lemmes~:
+\vskip .3cm
+{
+Lemme {\bf 1.5.2}. --- \it Le groupe $\Aut^+ I$ des homéomorphismes orientés de $I = [0,1]$ est contractile, ainsi que les groupes $\Aut^+(]0,1[)$, $\Aut^+(\mathbb{S}^1 ; 1)$.
+
+($\Aut^+(]0,1[)$ désigne le groupe des homéomorphismes orientés de $]0,1[$~; $\Aut^+(S^1 ; 1)$ désigne le groupe des homéomorphismes orientés de $\mathbb{S}^1$ fixes sur $1$~; et d'une façon générale si $X$ est une variété orientable connexe $\Aut^+ X$ désignera le groupe des homéomorphismes orientés de $X$)
+}
+\vskip .3cm
 
 
+\vskip .3cm
+{
+Lemme {\bf 1.5.3}. --- \it L'injection~:
+\[
+\mathbb{S}^1 \to \Aut^+ \mathbb{S}^1
+\leqno{(1.5.3.1)}
+\]
+qui à tout nombre complexe $z$ de module $1$ associe la translation $\operatorname{trans}(z)$ par $z$, est une équivalence d'homotopie.
+}
+\vskip .3cm
+Il est clair que le lemme 1.5.1. est conséquence des lemmes 1.5.2. et 1.5.3. (la connexité de $\Aut^+ S^1$ découlant de l'énoncé 1.5.3.).
 
+Nous montrons d'abord 1.5.2.~:
+\begin{itemize}
+    \item[$1^{\circ}$)] $\Aut^+ I$ est constitué des applications strictement croissantes surjectives et continues de $I$ dans $I$~; une contraction $F$ de $\Aut^+ I$ est donnée par l'application~:
+    \[
+    F : \Aut^+ I \times I \rightarrow \Aut^+ I \quad \text{qui à } (h,\lambda) \text{ associe } h_{\lambda} : [t \rightarrow \lambda t + (1-\lambda)h(t)].
+    \]
+    On a bien~: $h_0 = F(h,0) = h$, $h_1 = F(h,1) = \operatorname{id}_I$ et pour tout $\lambda (\lambda \in I)$, $h_{\lambda}$ est bien un élément de $\Aut^+ I$.
+    \item[$2^{\circ}$)] L'application $F'$ définie par la même formule que $F$ (ci-dessus), mais à domaine $\Aut^+(]0,1[) \times I$ et à valeurs dans $\Aut^+(]0,1[)$ définit une contraction de ce dernier espace.
+    \item[$3^{\circ}$)] Le groupe $\Aut^+(S^1 ; 1)$ est homéomorphe au groupe $\Aut^+ I$ (Remarquer que se donner un homéomorphisme orienté de $(S^1 ; 1)$ sur lui-même, revient à se donner une application continue croissante et bijective de $[0,2\pi]$ sur $[0,2\pi]$), et par conséquent contractile.
+    \item[$4^{\circ}$)] pour démontrer le lemme 3, on remarque que l'application $\Aut^+(S^1 ; 1) \times \mathbb{S}^1 \to \Aut^+ \mathbb{S}^1$ qui à $(h,z)$ associe $\operatorname{trans}(z) \circ h$ est un homéomorphisme ayant pour inverse l'application qui à $g \in \Aut^+ \mathbb{S}^1$ associe $(\operatorname{trans}(\frac{1}{g(1)}) \circ g, \operatorname{trans}(g(1)))$. Il suffit donc de remarquer que l'injection canonique~: $\mathbb{S}^1 \to \Aut^+(\mathbb{S}^1 ; 1) \times \mathbb{S}^1$ est une équivalence d'homotopie puisque $\Aut^+(\mathbb{S}^1 ; 1)$ est contractile par le lemme 2.
+\end{itemize}
 
+{\bf 1.5.4} Remarque. (Ici et partout dans la suite lorsque $G$ est un groupe topologique ayant $e$ pour élément neutre, $\pi_1 G$ désigne $\pi_1(G ; e)$)~:
+si $\Gamma$ est un cercle (1-variété connexe compacte) on déduit du lemme 1.5.3. que $\pi_1 \Aut^+ \Gamma$ est isomorphe à $\mathbf{Z}$. Mais de plus, si $\Gamma$ est orienté, il existe un isomorphisme \emph{canonique} $\mathbf{Z} \to \pi_1 \Aut^+ \Gamma$ obtenu en choisissant un homéomorphisme orienté $h$ de $S^1$ sur $\Gamma$ ($\mathbb{S}^1$ étant orientée de façon standard) et en formant le composé
+\[
+\mathbf{Z} \isommap \pi_1(\mathbb{S}^1 ; 1) \isommap \pi_1 \Aut^+ S^1 \isommap \pi_1 \Aut^+ \Gamma
+\]
+(où la première flèche représente l'isomorphisme canonique qui à $1$ associe le lacet générateur ``positif''~: $t \to e^{2\pi i t}$ ($t \in I$), la seconde flèche étant déduite de l'application {\bf 1.5.3.1} et la troisième flèche celle induite par $h$).
 
+{\bf 1.5.5.} Démonstration de la proposition {\bf 1.5.}
+\begin{itemize}
+\item[$1^{\circ}$)] Soient $h$ un élément de $\Aut K$, $h$ isotope à l'identité dans $\Aut K$,
+\[
+H(x,t) : K \times I \to K
+\]
+une isotopie de $\operatorname{id}_K$ à $h$, et $h_t \in \Aut K$ défini par
+\[
+h_t(x) = H(x,t) \qquad\qquad \text{(pour tout } x \in K\text{)},
+\]
+on a $h_0 = \operatorname{id}_K$, $h_1 = h$.
 
+Soit $x_0 \in S$, alors $H|{\{x_0\} \times I}$ est une application continue de l'espace connexe $\{x_0\} \times I$ dans l'espace discret $S$~: elle est donc constante. On en déduit $x_0 = H(x_0,0) = H(x_0,1) = h(x_0)$. On a donc $S(h) = \operatorname{id}_S$. Quant à l'isotopie $H$, elle est fixe sur $S$ et induit une isotopie $H'$ menant de l'identité de $K \setminus S$ à $h | K \setminus S$~:
+\[
+H' = H | (K \setminus S) \times I : (K \setminus S) \times I \to K \setminus S.
+\]
+Soit $\alpha$ une arête (i.e~: une composante de $K \setminus S$)~; $\alpha \times I$ est connexe et est donc envoyé par $H'$ dans une composante de $K \setminus S$. On montre que cette composante est $\alpha$ en prenant la restriction de $H'$ à $\alpha \times \{0\}$~: sur cet ensemble $H'$ coïncide avec la première projection. On en déduit $h(\alpha) = h_1(\alpha) = h_0(\alpha) = \alpha$.
 
+Par conséquent $H | \alpha \times I$ est une isotopie de $\text{id}_{\alpha}$ à $h | \alpha$, il en résulte que $h | \alpha$ conserve l'orientation, donc si $a$ est un arc associé à $\alpha$, on a $A(h)(a) = a$.
+\item[$2^{\circ}$)] Supposons maintenant que $h$ est un élément de $\Aut K$ et que $A(h) = \text{id}_A$, $S(h) = \text{id}_S$.
+
+Pour toute arête $\alpha$ on a $h(\alpha) = \alpha$ et $h | \alpha$ conserve l'orientation.
+
+Il y a trois cas à considérer~:
+\begin{itemize}
+    \item[a)] Si $\alpha$ est une boucle isolée, utilisant le lemme 1.5.1. on déduit que $h | \alpha$ est isotope à $\operatorname{id}_{\alpha}$ par une isotopie fixe en dehors de $\alpha$.
+    \item[b)] Si à $\alpha$ correspondent deux arcs pour lesquels source et but dans $K$ sont distincts, utilisant toujours le lemme {\bf 1.5.1.}, on déduit que $h | \bar{\alpha}$ est isotope à $\text{id}_{\bar{\alpha}}$ par isotopie fixe en dehors de $\bar{\alpha}$ ($\bar{\alpha}$ désigne l'adhérence de $\alpha$ dans $K$).
+    \item[c)] Si à $\alpha$ correspondent deux arcs pour lesquels source et but dans $K$ sont confondus, utilisant maintenant le lemme 1.5.2. on déduit également que $h | \bar{\alpha}$ est isotope à l'identité par isotopie fixe en dehors de $\alpha$.
+\end{itemize}
+Finalement, toutes les isotopies ainsi obtenues pour toutes les arêtes $\alpha$ déterminent une isotopie globale de $h$ à $\operatorname{id}_K$ (isotopie fixe sur $S$).
+\end{itemize}
 
 \vskip .3cm
 {\bf 1.6}. --- Type d'homotopie de $\Aut~K$.
 
-La proposition {\bf 1.5.} donne une détermination de la composante 
-
-
-
-
+La proposition {\bf 1.5.} donne une détermination de la composante $\Aut^\circ K$ de l'identité dans $\Aut K$. (D'une façon générale si $G$ est un groupe topologique, on notera $G^\circ$ la composante connexe par arcs de l'élément neutre dans $G$.) La proposition suivante achève la détermination du type d'homotopie de $\Aut K$~:
+\vskip .3cm
+{
+Proposition {\bf 1.6.1.}. --- \it Si $K$ comporte $p$ boucles isolées, le type d'homotopie de $\Aut^\circ K$ est celui de $(\mathbb{S}^1)^p$.
+}
+\vskip .3cm
+{
+Corrollaire. --- \it Si $K$ ne comporte pas de boucles isolées alors $\Aut^\circ K$ est contractile.
+}
+\vskip .3cm
+Démonstration. Il résulte de la proposition 1.5. que~:
+\[
+\Aut^\circ K \isom \prod_{\alpha \in \pi_0(K \setminus S)} \Aut^+ \bar{\alpha}
+\]
+La proposition {\bf 1.6.1.} est alors conséquence des lemmes {\bf 1.5.2.} et {\bf 1.5.3.} qui établissent que $\Aut^+ \bar{\alpha}$ est contractile sauf si $\alpha$ est une boucle isolée, auquel cas $\Aut^+ \bar{\alpha} = \Aut^+ \alpha$, et ce dernier a le type d'homotopie de $\mathbb{S}^1$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{2. La catégorie $\kc$ des 1-complexes combinatoires.}
