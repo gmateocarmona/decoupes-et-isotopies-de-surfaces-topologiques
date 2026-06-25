@@ -82,9 +82,6 @@ Lemme {\bf 1.5.2}. --- \it Le groupe $\Aut^+ I$ des homéomorphismes orientés d
 ($\Aut^+(]0,1[)$ désigne le groupe des homéomorphismes orientés de $]0,1[$~; $\Aut^+(S^1 ; 1)$ désigne le groupe des homéomorphismes orientés de $\mathbb{S}^1$ fixes sur $1$~; et d'une façon générale si $X$ est une variété orientable connexe $\Aut^+ X$ désignera le groupe des homéomorphismes orientés de $X$)
 }
 \vskip .3cm
-
-
-\vskip .3cm
 {
 Lemme {\bf 1.5.3}. --- \it L'injection~:
 \[
@@ -170,21 +167,61 @@ La proposition {\bf 1.6.1.} est alors conséquence des lemmes {\bf 1.5.2.} et {\
 \subsection*{2. La catégorie $\kc$ des 1-complexes combinatoires.}
 \addcontentsline{toc}{subsection}{2. La catégorie $\kc$ des 1-complexes combinatoires}
 
-{\bf 2.1}. ---
+{\bf 2.1}. --- Un \emph{1-complexe combinatoire} est un quintuplet $k = (S, A, B, \sigma, s)$ où $S$ et $A$ sont des ensembles finis, $B$ une partie de $A$, $\sigma$ une involution sans point fixe de $A$ telle que $\sigma(B) = B$, et $s$ une application de $A \setminus B$ dans $S$.
 
-
-\vskip .3cm
-{\bf 2.2}. ---
-
+$S$ sera appelé \emph{ensemble des sommets}, $A$ \emph{ensemble des arcs}, $B$ ensemble des \emph{arcs sans source} (ou \emph{arcs boucles isolées}), $A \setminus B$ ensemble des arcs avec source. Si $a \in A \setminus B$, $s(a)$ sera appelé \emph{source} de $a$, $s(\sigma(a))$ sera appelé \emph{but} de $a$ et noté $b(a)$. Si $a \in A$, $\sigma(a)$ sera appelé \emph{l'inverse} de $a$.
 
 \vskip .3cm
-{\bf 2.3}. ---
+{\bf 2.2}. --- Étant donné deux 1-complexes combinatoires $k$ et $k'$ ($k = (S,A,B,\sigma,s)$, $k' = (S',A',\sigma',s')$), un \emph{isomorphisme de 1-complexes combinatoires} entre $k$ et $k'$ est un couple $b = (\varphi, \psi)$ où $\varphi$ est une bijection de $S$ sur $S'$, $\psi$ une bijection de $A$ sur $A'$ telles que~: $\psi(B) = B'$ (ce qui entraîne : $\psi(A \setminus B) = A' \setminus B'$), et que les deux diagrammes~:
+\[\begin{tikzcd}
+	{A\setminus B} & S && A & A \\
+	{A' \setminus B'} & {S'} && {A'} & {A'}
+	\arrow["s", from=1-1, to=1-2]
+	\arrow["{\psi_{|A\setminus B}}", from=1-1, to=2-1]
+	\arrow["\varphi", from=1-2, to=2-2]
+	\arrow["\sigma", from=1-4, to=1-5]
+	\arrow["\psi", from=1-4, to=2-4]
+	\arrow["\psi", from=1-5, to=2-5]
+	\arrow["{s'}", from=2-1, to=2-2]
+	\arrow["{\sigma'}", from=2-4, to=2-5]
+\end{tikzcd}\]
+soient commutatifs (si $b' = s' \circ \sigma'$, on a par conséquent~: $b' \circ \psi|{A \setminus B} = \varphi \circ b$.)
 
+\vskip .3cm
+{\bf 2.3}. --- La \emph{catégorie des 1-complexes combinatoires} est la \emph{catégorie $\kc$} dont les objets sont les 1-complexes combinatoires et les flèches sont les isomorphismes définis en {\bf 2.2.} C'est un groupoïde.
+
+Remarque. l'intérêt des notions introduites dans {\bf 2.1} à {\bf 2.3.} tient au fait que la catégorie $\kc$ fournit une description ``combinatoire'', à équivalence près, de la catégorie $Kt$ (catégorie isotopique des 1-complexes topologiques), comme on verra dans le \S~3 que nous conseillons au lecteur d'aborder avant les digressions techniques qui suivent sur le groupoïde fondamental combinatoire.
 
 \vskip .3cm
 {\bf *2.4}. --- groupoïde fondamental d'un 1-complexe combinatoire sans boucles isolées.
 
-Soit $\Kcp$
+Soit $\kcp$ la sous catégorie pleine de $\kc$ formée des 1-complexes combinatoires \emph{purs}, i.e. ceux pour lesquels $B = \emptyset$. Nous allons définir un foncteur de $kcp$ dans la catégorie $\GR$ des groupoïdes, catégorie ayant pour objets les groupoïdes et pour flèches les foncteurs isomorphismes de groupoïdes.
+
+{\bf 2.4.1.} Soit donc $k = (S, A, \emptyset, \sigma, s)$ un objet de $\kcp$.
+
+L'ensemble $SF(A)$ des suites finies (éventuellement vides) d'éléments de $A$ est un monoïde associatif unitaire pour la loi $*$ de concaténation des suites finies :
+\[ 
+(a_1,a_2,\dots a_n) * (b_1,b_2,\dots b_m) = (a_1,a_2,\dots, a_n, b_1,b_2,\dots, b_m). 
+\]
+La suite vide en est l'élément neutre.
+
+On appellera \emph{chemin} de $k$ de source $x$, de but $y$, tout élément $\gamma$ de $S \times S \times SF(A)$ de la forme~: $\gamma = (x,y,(a_1,a_2,\dots, a_n))$ où $s(a_1) = x$, $b(a_n) = y$, et pour tout $i = 1,\dots,n-1$~: $b(a_i) = s(a_{i+1})$
+On notera $x = s(\gamma)$, $y = b(\gamma)$.
+
+Si $\gamma = (x,y,\tau)$ et $\gamma' = (y,z,\tau')$ sont deux chemins tels que $b(\gamma)=s(\gamma')$ on définit leur \emph{composé} $\gamma' \cdot \gamma$ comme étant~: $\gamma' \cdot \gamma = (x,z,\tau * \tau')$. Cette opération est associative.
+
+Un \emph{lacet d'origine $x$} est un chemin $\gamma$ tel que $s(\gamma) = b(\gamma) = x$.
+
+Le \emph{lacet constant d'origine $x$} est $c_x = (x,x,\emptyset)$
+
+Le chemin \emph{opposé} de $\gamma = (x,y,(a_1,a_2,\dots a_n))$ est le chemin $(y,x,(\sigma(a_n),\sigma(a_{n-1}),\dots,\sigma(a_1)))$.
+
+On dit que $k$ est \emph{connexe} si pour tout couple $(x,y)$ de sommets de $k$ il existe un chemin de $k$ de source $x$, de but $y$.
+
+De façon évidente, tout 1-complexe combinatoire pur $k$ est somme dans la catégorie $\kcp$ de 1-complexe \emph{connexes} $k_1,k_2,\dots,k_n$ qu'on appellera ses \emph{composantes} (N.B.~: la \emph{somme} des 1-complexes combinatoires $k_i = (S_i,A_i,B_i,\sigma_i,s_i)$ ($i = 1,\dots,n$) est le 1-complexe
+
+%%%
+
 
 
 
