@@ -219,21 +219,44 @@ Le chemin \emph{opposé} de $\gamma = (x,y,(a_1,a_2,\dots a_n))$ est le chemin $
 On dit que $k$ est \emph{connexe} si pour tout couple $(x,y)$ de sommets de $k$ il existe un chemin de $k$ de source $x$, de but $y$.
 
 De façon évidente, tout 1-complexe combinatoire pur $k$ est somme dans la catégorie $\kcp$ de 1-complexe \emph{connexes} $k_1,k_2,\dots,k_n$ qu'on appellera ses \emph{composantes} (N.B.~: la \emph{somme} des 1-complexes combinatoires $k_i = (S_i,A_i,B_i,\sigma_i,s_i)$ ($i = 1,\dots,n$) est le 1-complexe
+$$
+k = (\amalg_{i = 0}^n S_i, \amalg_{i = 0}^n A_i, \amalg_{i = 0}^n B_i, \amalg_{i = 0}^n \sigma_i, \amalg_{i = 0}^n s_i))
+$$
+{\bf 2.4.2.} Soit $L(A)$ le groupe libre engendré par la base \emph{symétrisée} $A$ (où l'inverse dans $L(A)$ de $a \in A$ est $\sigma(a)$), on a un homomorphisme $L$ canonique du monoïde $SF(A)$ dans $L(A)$ induit par l'identité sur $A$ ($A$ est une base du monoïde libre $SF(A)$). Par conséquent à tout chemin $\gamma$ est associé un élément (qu'on notera $L(\gamma)$) de $L(A)$, à savoir l'image par $L$ de la suite finie de $A$ associée à $\gamma$. Si $\gamma$ et $\gamma'$ sont deux chemins tels que $s(\gamma') = b(\gamma)$, il est clair que $L(\gamma' \cdot \gamma) = L(\gamma) \cdot L(\gamma')$.
+Deux chemins $\gamma$ et $\gamma'$ de $k$ seront dits \emph{homotopes} dans $K$ si et seulement si $L(\gamma) = L(\gamma')$.
 
-%%%
+Remarquons que vu la construction du groupe libre $L(A)$ cette relation est la cloture réflexive symétrique transitive de la relation ``élémentaire'' $R$~:
 
+$\gamma \, R \, \gamma' \Leftrightarrow$ il existe des chemins $c, d, d'$ de $k$, le chemin $c$ étant de
+la forme $(x, y, (a, \sigma(a)))$, tels que $\gamma = d' \cdot d$ et $\gamma' = d' \cdot c \cdot d$.
 
+Par conséquent il résulte des propriétés des groupes libres que toute classe d'homotopie de chemins de $k$ contient un \emph{unique} chemin réduit, c'est à dire tel que la suite d'arcs associée ne contienne pas deux arcs consécutifs inverses l'un de l'autre.
 
+De la remarque, on déduit que deux chemins homotopes ont même source, même but. Si on note $[\gamma]$ la classe du chemin $\gamma$, on pourra donc parler de la source $s([\gamma])$ de $[\gamma]$ et du but $b([\gamma])$ de $[\gamma]$~; on a $s([\gamma]) = s(\gamma)$ et $b([\gamma]) = b(\gamma)$.
 
+La classe d'un lacet est composée de lacets de même origine.
 
+{\bf 2.4.3.} Du fait que $L$ est un homomorphisme de monoïdes et de la définition de la relation d'homotopie on déduit que celle-ci est compatible avec la composition des chemins et par conséquent, la relation $[\gamma'] \cdot [\gamma] = [\gamma' \cdot \gamma]$ définit une composition (associative), des classes $[\gamma]$ et $[\gamma']$ telles que $b([\gamma]) = s([\gamma'])$.
 
+Il est immédiat que si $[\gamma]$ est une classe de chemin de source $x$ de but $y$, on a~: $[c_y] \cdot [\gamma] = [\gamma] \cdot [c_x] = [\gamma]$~; de plus il existe une classe $[\gamma']$ de chemins, de source $y$ et de but $x$, telle que $[\gamma'] \cdot [\gamma] = [c_x]$ et $[\gamma] \cdot [\gamma'] = [c_y]$ (prendre pour $\gamma'$ le chemin opposé à $\gamma$).
 
+On définit donc une catégorie $\pi(k)$ en prenant pour objets les sommets de $k$ et pour flèches d'un objet $x$ à un objet $y$, les classes de chemins de $k$, de source $x$, de but $y$~; cette catégorie est un groupoïde qu'on appellera ``\emph{groupoïde fondamental}'' de $k$. L'ensemble des classes de lacets d'origine $x$ ($x \in S$), muni de la composition des classes, est donc un groupe qu'on appellera groupe fondamental d'origine $x$ de $k$, et qu'on notera $\pi_1(k ; x)$.
+
+Remarquons que l'homorphisme $L$ induit par restriction et passage au quotient une injection de $\pi_1(k ; x)$ dans $L(A)$, et que par conséquent $\pi_1(k ; x)$, étant ainsi identifié à un sous-groupe de groupe libre, est lui-même un groupe libre.
+
+{\bf 2.4.4.} Étant donné deux objets $k$ et $k'$ de $\kcp$ ($k = (S, A, \phi, \sigma, s)$, $k' = (S', A', \phi, \sigma', s')$) et un isomorphisme $b = (\varphi, \psi)$ entre eux, on peut associer à $b$ un isomorphisme $\pi(b)$ entre $\pi(k)$ et $\pi(k')$ de la manière suivante~:
+\begin{itemize}
+    \item[a)] $\varphi$ est une bijection de l'ensemble $S$ des objets de $\pi(k)$ sur l'ensemble $S'$ des objets de $\pi(k')$~; on définit $\pi(b)$ comme étant égal à $\varphi$ sur les objets.
+    \item[b)] par transport de structure, $\psi$ induit une bijection entre les classes de chemins de $k$ et de $k'$~; on définit $\pi(b)$ comme étant égal à cette bijection sur les morphismes.
+\end{itemize}
+
+{\bf 2.4.5.} Le foncteur annoncé $\kcp \to \GR$, qu'on notera $\pi$, est défini sur les objets en {\bf 2.4.3.} et sur les morphismes en {\bf 2.4.4.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{3. L'équivalence canonique entre les catégories $\Kt$ et $\kc$.}
 \addcontentsline{toc}{subsection}{3. L'équivalence canonique entre les catégories $\Kt$ et $\kc$}
 
-{\bf 3.1}. ---
+{\bf 3.1}. --- Définition d'un foncteur $c$ de $\Kt$ dans $\kc$.
 
 
 
