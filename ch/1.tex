@@ -258,10 +258,41 @@ Remarquons que l'homorphisme $L$ induit par restriction et passage au quotient u
 
 {\bf 3.1}. --- Définition d'un foncteur $c$ de $\Kt$ dans $\kc$.
 
+On définit le foncteur ``\emph{représentation combinatoire}'' de la fa\c{c}on suivante~:
 
+A tout 1-complexe $K$ dont l'ensemble des sommets est $S$, l'ensemble des arcs est $A$, l'ensemble des boucles est $B$, on associe le 1-complexe combinatoire $c(K) = (S, A, B, \sigma, s)$, où $\sigma$ est l'involution sans point fixe de $A$ qui à tout arc associe son inverse, et $s$ l'application ``source'' de $A \setminus B$ dans $S$ qui à tout arc avec source associe sa source dans $K$.
+
+Si $K'$ est un autre 1-complexe et $c(K') = (S', A', B', \sigma', s')$, et si $\bar{h}$ est une classe d'isotopie d'isomorphismes de $K$ sur $K'$, on choisit un représentant $h$ de cette classe et on définit la flèche $c(\bar{h})$ comme étant le couple $(S(h),A(h))$ ($S(h)$ et $A(h)$ ont été définis en {\bf 1.4.})~; la proposition {\bf 1.5.} permet d'affirmer que si on choisit un autre représentant $h'$ de $\bar{h}$ on a bien $S(h) = S(h')$ et $A(h) = A(h')$ car alors $h' \circ h^{-1}$ est isotope à l'identité de $k'$ et~:
+$$
+S(h') \circ S(h)^{-1} = S(h' \circ h^{-1}) = \operatorname{id}_{S'}
+$$
+$$
+A(h') \circ A(h)^{-1} = A(h' \circ h^{-1}) = \operatorname{id}_{A'}
+$$
+La vérification des propriétés {\bf 2.2.} est immédiate pour ce couple, ainsi que le fait que $c$ est bien un foncteur (qui provient essentiellement de ce que si $h \in \operatorname{Isom}(K,K')$ et $h' \in \operatorname{Isom}(K',K'')$ on a $S(h' \circ h) = S(h') \circ S(h)$ et $A(h' \circ h) = A(h') \circ A(h)$).
 
 \vskip .3cm
-{\bf 3.2}. ---
+{\bf 3.2}. --- Définition d'un foncteur $r$ de $\kc$ dans $\Kt$
+
+On définit le foncteur ``\emph{réalisation topologique}'' comme suit~:
+
+{\bf 3.2.1.} A tout 1-complexe combinatoire $k = (S, A, B, \sigma, s)$ on associe le 1-complexe topologique $r(k)$ obtenu par recollement des 0 et 1-variétés à bord~:
+
+$S$ (ensemble discret), $(A \setminus B) \times I$ (où $A \setminus B$ est muni de la topologie discrète et $I = [0,1]$ muni de la topologie standard), et $B \times S^1$, ($B$ ensemble discret, $S^1$ muni de la topologie standard), selon les lois~:
+\begin{itemize}
+    \item[$1^\circ$)] Pour tout $a \in A \setminus B$~: $\{a\} \times I$, (composante connexe de $(A \setminus B) \times I$, homéomorphe à $I$) est recollée sur $S$ en identifiant les points $(a,0)$ et $s(a)$
+    \item[$2^\circ$)] Pour tout $a \in A \setminus B$~: $\{a\} \times I$ est identifié à $\{\sigma(a)\} \times I$ en identifiant pour tout $t \in I$ le point $(a,t)$ au point $(\sigma(a), 1-t)$.
+    \item[$3^\circ$)] Pour tout $a \in B$~: $\{a\} \times S^1$ est identifié à $\{\sigma(a)\} \times \mathbb{S}^1$ en identifiant pour tout $z \in \mathbb{S}^1$ le point $(a,z)$ au point $(\sigma(a),\bar{z})$
+\end{itemize}
+Remarquons de suite que, si $a$ est dans $A \setminus B$, le point $(a,1)$ de $\{a\} \times I$ est identifié par $2^\circ$) à $(\sigma(a),0)$ et donc par $1^\circ$) à $s(\sigma(a))$, or $s(\sigma(a)) = b(a)$.
+\vskip .3cm
+\begin{minipage}{\linewidth}
+    \centering
+    \includegraphics[width=130mm,scale=1]{figs/1.png}
+\end{minipage}
+\vskip .3cm
+Il est clair qu'on obtient un 1-complexe dont l'ensemble $S_k$ des sommets est égal à $S$ et dont l'ensemble $A_k$ des arcs est en bijection canonique avec $A$ par l'application $\psi_k$ qui, à tout $\{ a \} \times I$, associe $a$ (si $a \in A \setminus B$), et qui à tout $\{ a \} \times \mathbb{S}^1$ associe $a$ (si $a \in B$).
+
 
 
 
