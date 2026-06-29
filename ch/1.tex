@@ -293,15 +293,65 @@ Remarquons de suite que, si $a$ est dans $A \setminus B$, le point $(a,1)$ de $\
 \vskip .3cm
 Il est clair qu'on obtient un 1-complexe dont l'ensemble $S_k$ des sommets est égal à $S$ et dont l'ensemble $A_k$ des arcs est en bijection canonique avec $A$ par l'application $\psi_k$ qui, à tout $\{ a \} \times I$, associe $a$ (si $a \in A \setminus B$), et qui à tout $\{ a \} \times \mathbb{S}^1$ associe $a$ (si $a \in B$).
 
+{\bf 3.2.2.} Si $k' = (S', A', B', \sigma', s')$ est un autre $1$-complexe combinatoire et $b = (\varphi, \psi)$ un isomorphisme combinatoire de $k$ sur $k'$, on définit une classe $r(b)$ d'isotopie d'homéomorphismes de $r(k)$ sur $r(k')$ comme étant la classe de l'homéomorphisme $h_b$ obtenu par ``recollement'' des homéomorphismes~:
+\begin{align*}
+    h_s &: S \isommap S' : (x \to \varphi(x)) \\
+    h_a &: \{a\} \times I \to \{\psi(a)\} \times I : ((a, t) \to (\psi(a), t)) \text{ pour tout } a \in A \setminus B \\
+    h_{a'} &: \{a'\} \times \mathbb{S}^1 \to \{\psi(a')\} \times \mathbb{S}^1 : ((a', z) \to (\psi(a'), z)) \text{ pour tout } a' \in B
+\end{align*}
+(Ces homéomorphismes, étant compatibles avec les opérations de recollement qui définissent $r(k)$ et $r(k')$, induisent bien un homéomorphisme de $r(k)$ sur $r(k')$.)
 
-
-
-
+Au total, les paragraphes {\bf 3.2.1.} et {\bf 3.2.2.} donnent la construction du foncteur $r$ annoncé.
 \vskip .3cm
-{\bf 3.3}. ---
+{
+Théorème {\bf 3.3.} --- \it  Les foncteurs $r$ et $c$ sont des équivalences quasi-inverses l'une de l'autre.
+}
+\vskip .3cm
+Pour cela on va montrer que le foncteur $c \circ r$ est isomorphe au foncteur identique de $kc$, et que le foncteur $r \circ c$ est isomorphe au foncteur identique de $\Kt$.
 
+{\bf 3.3.1.} Il existe pour tout objet $k$ de $\kc$ un isomorphisme canonique $b_k$ de $\kc$ entre $k$ et $c(r(k))$. En effet si $k$ est $(S, A, B, \sigma, s)$, $r(k)$ a pour ensemble de sommets $S_k = S$ et pour ensemble d'arcs $A_k$ en bijection canonique $\psi_k$ avec $A$ (cf. fin du \S {\bf 3.2.1.}). Notons $\sigma_k$ l'involution sans point fixe de $A_k$ qui à un arc associe son inverse, et $s_k$ l'application source de $A_k \setminus B_k$ dans $S_k$ (où $B_k$ est l'ensemble des arcs sans source de $r(k)$). On a alors~:
+\[
+c(r(k)) = (S_k, A_k, B_k, \sigma_k, s_k), \text{ et le couple } b_k = (\operatorname{id}_S, \psi_k)
+\]
+(où $\psi_k$ est définie à la fin de {\bf 3.2.1}) est un isomorphisme combinatoire entre $c(r(k))$ et $k$.
 
+Pour démontrer que l'application qui à tout $k$ objet de $kc$ associe l'isomorphisme $b_k$ entre $c(r(k))$ et $k$ est un isomorphisme entre les foncteurs $c \circ r$ et $\operatorname{id}_{\kc}$ il suffit de vérifier que pour tout autre 1-complexe combinatoire $k'$ et tout isomorphisme $b$, (de $\kc$), entre $k$ et $k'$ on a le diagramme commutatif~:
+\[\begin{tikzcd}
+	{c(r(k))} & {c(r(k'))} \\
+	k & {k'}
+	\arrow["{c(r(b))}", from=1-1, to=1-2]
+	\arrow["{b_k}", from=1-1, to=2-1]
+	\arrow["{b_{k'}}", from=1-2, to=2-2]
+	\arrow["b", from=2-1, to=2-2]
+\end{tikzcd}\]
+or si $b = (\varphi, \psi)$ on a $c(r(b)) = (\varphi, A(r(\psi)))$ et il suffit donc de vérifier que~:
+\[
+\psi \circ \psi_k = \psi_{k'} \circ A(r(\psi)).
+\]
+Or $\psi \circ \psi_k$, à $\{a\} \times I$ (ou $\{a\} \times \mathbb{S}^1$), associe d'abord par $\psi_k : a$, puis par $\psi : \psi(a)$.
 
+Quant à $\psi_{k'} \circ A(r(\psi))$, elle associe à $\{a\} \times I$ (ou $\{a\} \times \mathbb{S}^1$), d'abord par $A(r(\psi)) : \{\psi(a)\} \times I$ (ou $\{\psi(a)\} \times S^1$), puis par $\psi_{k'} : \psi(a)$. c.q.f.d.
+
+{\bf 3.3.2.} Pour tout objet $K$ de $Kt$ il existe une classe (canonique) d'isotopie d'homéomorphismes de $r(c(K))$ sur $K$ qu'on notera $H_K$. En effet d'après la proposition {\bf 1.5.} une telle classe d'homéomorphismes $h$ est parfaitement déterminée par la connaissance de $S(h)$ et $A(h)$. On va donc déterminer un homéomorphisme de $r(c(K))$ sur $K$ qui induise l'identité sur l'ensemble $S$ des sommets (c'est le même pour $r(c(K))$ et pour $K$), et qui sur les ensembles d'arcs induise l'application qui, à tout arc $\{a\} \times I$ (ou $\{a\} \times \mathbb{S}^1$) de $r(c(K))$, associe l'arc $a$ de $K$. Or, l'existence d'un tel homéomorphisme est conséquence du lemme :
+\vskip .3cm
+{
+Lemma. --- \it Soient $K, K'$ deux $1$-complexes topologiques et $b$ un élément de $\Hom_{\kc}[c(K), c(K')]$, il existe un isomorphisme $h$ de $K$ sur $K'$ tel que $b = (S(h), A(h))$.
+}
+\vskip .3cm
+Démonstration. Soit $b = (\varphi, \psi), c(K) = (S, A, B, \sigma, s), c(K') = (S', A', B', \sigma', s')$.
+
+Soit $h_S = \varphi : S \to S'$, et pour toute arête $\alpha$ de $K$ à laquelle sont associés les arcs $a_\alpha, \sigma(a_\alpha)$ de $K$, choisissons un homéomorphisme orienté $h_\alpha$ de $a_\alpha$ sur $a'_\alpha = \psi(a_\alpha)$, alors la famille des applications $h_S, h_\alpha, (\alpha \in \pi_o(K \setminus S))$, détermine un homéomorphisme $h$ solution du problème. c.q.f.d.
+
+Pour démontrer que l'application qui, à tout $K$ objet de $Kt$, associe l'isomorphisme $H_K$ (de $\Kt$) entre $r(c(K))$ et $K$, est un isomorphisme entre les foncteurs $r \circ c$ et $\operatorname{id}_{\Kt}$, il faut vérifier que pour tout autre objet $K'$ de $\Kt$ et pour tout isomorphisme $\overline{g}$ de $\Kt$ entre $K$ et $K'$ on a un diagramme commutatif~:
+\[\begin{tikzcd}
+	{r(c(K))} & {r(c(K'))} \\
+	K & {K'}
+	\arrow["{r(c(\overline{g}))}", from=1-1, to=1-2]
+	\arrow["{H_k}", from=1-1, to=2-1]
+	\arrow["{H_{K'}}", from=1-2, to=2-2]
+	\arrow["{\overline{g}}", from=2-1, to=2-2]
+\end{tikzcd}\]
+ou encore, que les classes d'isotopie $H_1 = H_{K'} \circ r(c(\overline{g}))$ et $H_2 = \overline{g} \circ H_K$ sont les mêmes, or cela se vérifie sans difficultés en remarquant que par construction de $H_K$ et $H_{K'}$, on a $S(H_1) = S(H_2)$ et $A(H_1) = A(H_2)$, et en appliquant la proposition {\bf 1.5.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{*4. L'équivalence canonique entre $\pi(c(K))$ et $\pi(K)$.}
